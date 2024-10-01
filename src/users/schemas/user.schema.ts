@@ -7,9 +7,6 @@ import { Document } from 'mongoose';
  * https://mongoosejs.com/docs/schematypes.html#schematype-options
  */
 
-// This is the TypeScript interface representing a User document
-export type UserDocument = User & Document;
-
 @Schema({ timestamps: true }) // Decorator that marks the class as a Mongoose schema and enables timestamps
 export class User extends Document {
   @Prop({ required: true, maxlength: 150 }) // 'required' ensures that this field must be present
