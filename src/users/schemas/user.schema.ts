@@ -1,4 +1,3 @@
-// user.schema.ts
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
@@ -8,7 +7,7 @@ import { Document } from 'mongoose';
  */
 
 @Schema({ timestamps: true }) // Decorator that marks the class as a Mongoose schema and enables timestamps
-export class User extends Document {
+export class User extends Document { //extends Document to resolve the _id error and access all mongoose properties.
   @Prop({ required: true, maxlength: 150 }) // 'required' ensures that this field must be present
   name: string;
 
